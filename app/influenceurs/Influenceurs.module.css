@@ -13,13 +13,13 @@
 
 .header h1 {
   font-size: 2.5rem;
-  color: #EE2677;
+  color: #333;  /* Noire pour le titre */
   margin-bottom: 10px;
 }
 
 .header p {
   font-size: 1.2rem;
-  color: #555;
+  color: #555;  /* Gris foncé pour le texte */
   max-width: 800px;
   margin: 0 auto;
 }
@@ -32,7 +32,7 @@
 }
 
 .scrollButton {
-  background-color: #EE2677;
+  background-color: #333;  /* Boutons noirs */
   color: white;
   border: none;
   padding: 10px;
@@ -42,7 +42,7 @@
 }
 
 .scrollButton:hover {
-  background-color: #d81a67;
+  background-color: #555;  /* Un gris plus clair au survol */
 }
 
 .slider {
@@ -92,12 +92,12 @@
 
 .name {
   font-size: 1.5rem;
-  color: #333;
+  color: #333;  /* Texte noir pour le nom */
   margin-top: 10px;
 }
 
 .reputation {
-  color: #777;
+  color: #777;  /* Gris pour la réputation */
   font-style: italic;
   margin-top: 5px;
 }
@@ -108,7 +108,7 @@
 
 .stats {
   font-size: 1rem;
-  color: #555;
+  color: #555;  /* Gris foncé pour les stats */
   margin-bottom: 10px;
 }
 
@@ -119,12 +119,12 @@
 
 .atoutItem {
   font-size: 1rem;
-  color: #EE2677;
+  color: #333;  /* Gris foncé pour les atouts */
 }
 
 .footer {
   text-align: center;
   margin-top: 40px;
   font-size: 1rem;
-  color: #777;
+  color: #777;  /* Gris pour le footer */
 }
