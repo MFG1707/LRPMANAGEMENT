@@ -27,10 +27,6 @@ export default function Contact() {
 
     // Redirect to WhatsApp with the pre-filled message
     window.location.href = whatsappLink;
-
-    // Reset form after redirect
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
   };
 
   return (
