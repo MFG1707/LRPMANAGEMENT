@@ -93,7 +93,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   component="div"
                   key={index}
                   onClick={() => handleNavigation(item.path)}
-                  style={{
+                  sx={{
                     cursor: 'pointer',
                     color: '#FFFFFF',
                     display: 'flex',
