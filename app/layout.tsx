@@ -39,14 +39,14 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fr">
       <body>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#fff' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#f5f5f5' }}>
           {/* AppBar avec les éléments du menu */}
           <AppBar
             position="fixed"
             style={{
               zIndex: 1201,
-              backgroundColor: '#00008B',
-              color: 'white',
+              backgroundColor: '#000', // Fond noir pour l'AppBar
+              color: '#fff', // Texte blanc
               boxShadow: 'none',
             }}
           >
@@ -77,7 +77,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             sx={{
               '& .MuiDrawer-paper': {
                 width: drawerWidth,
-                backgroundColor: '#00008B',
+                backgroundColor: '#333', // Fond gris foncé pour le menu
                 display: 'flex',
                 flexDirection: 'column', // Disposition verticale
                 justifyContent: 'flex-start',
@@ -102,7 +102,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     borderRadius: '8px',
                     width: '100%',
                     '&:hover': {
-                      backgroundColor: '#EE2677',
+                      backgroundColor: '#444', // Gris plus clair au survol
                       transform: 'scale(1.05)',
                       transition: 'transform 0.2s ease-in-out',
                     },
