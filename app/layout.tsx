@@ -10,21 +10,26 @@ import PersonIcon from '@mui/icons-material/Person';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import MenuIcon from '@mui/icons-material/Menu';
 
+// Drawer width for sidebar
 const drawerWidth = 240;
 
-const Layout = ({ children }) => {
+// Layout component with explicit typing for 'children'
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
+  // Toggle drawer visibility
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  const handleNavigation = (path) => {
+  // Handle navigation and close drawer
+  const handleNavigation = (path: string) => {
     router.push(path);
-    setOpen(false); // Fermer le menu après la navigation
+    setOpen(false); // Close the menu after navigating
   };
 
+  // Menu items for the drawer
   const menuItems = [
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
     { text: 'Influenceurs', path: '/influencers', icon: <PersonIcon /> },
@@ -35,7 +40,7 @@ const Layout = ({ children }) => {
     <html lang="fr">
       <body>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#fff' }}>
-          {/* AppBar en haut avec éléments du menu */}
+          {/* AppBar with menu items */}
           <AppBar
             position="fixed"
             style={{
@@ -56,7 +61,7 @@ const Layout = ({ children }) => {
             </Toolbar>
           </AppBar>
 
-          {/* Drawer avec les éléments du menu alignés en haut */}
+          {/* Drawer with menu items aligned horizontally */}
           <Drawer
             variant="temporary"
             open={open}
@@ -74,7 +79,7 @@ const Layout = ({ children }) => {
                 width: '100%',
                 backgroundColor: 'black',
                 display: 'flex',
-                flexDirection: 'row', // Affichage horizontal
+                flexDirection: 'row', // Horizontal layout
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: '10px 0',
@@ -111,7 +116,7 @@ const Layout = ({ children }) => {
             </List>
           </Drawer>
 
-          {/* Contenu principal */}
+          {/* Main content section */}
           <main style={{ flexGrow: 1, padding: '20px', marginTop: '80px', backgroundColor: '#f5f5f5', borderRadius: '12px' }}>
             {children}
           </main>
