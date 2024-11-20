@@ -23,8 +23,8 @@ export default function Home() {
               transition: 'background-color 0.3s ease',
               boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
             }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f3f3'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = '#fff'}
+            onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f3f3f3'}
+            onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#fff'}
           >
             Découvrez nos Influenceurs
           </button>
@@ -95,8 +95,8 @@ export default function Home() {
               transition: 'background-color 0.3s ease',
               boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
             }}
-            onMouseEnter={(e) => e.target.style.backgroundColor = '#f3f3f3'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = '#fff'}
+            onMouseEnter={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#f3f3f3'}
+            onMouseLeave={(e) => (e.target as HTMLButtonElement).style.backgroundColor = '#fff'}
           >
             Contactez-nous
           </button>
