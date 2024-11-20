@@ -19,27 +19,22 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Construct the pre-filled WhatsApp message
     const preWrittenMessage = `Bonjour, je souhaiterais obtenir des renseignements sur les influenceurs. Nom: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`;
 
-    // WhatsApp API link with the pre-written message
     const whatsappLink = `https://wa.me/+22941120412?text=${encodeURIComponent(preWrittenMessage)}`;
 
-    // Redirect to WhatsApp with the pre-filled message
     window.location.href = whatsappLink;
   };
 
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0 }}>
-      {/* Header Section */}
       <header style={{ textAlign: 'center', padding: '4rem', backgroundColor: '#222', color: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>Contactez-Nous</h1>
         <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', marginBottom: '2rem' }}>
-          Nous sommes à votre écoute pour répondre à toutes vos questions. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+          Nous sommes à votre &eacute;coute pour r&eacute;pondre &agrave; toutes vos questions. Remplissez le formulaire ci-dessous et nous vous r&eacute;pondrons dans les plus brefs d&eacute;lais.
         </p>
       </header>
 
-      {/* Contact Form Section */}
       <section style={{ padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', justifyContent: 'center' }}>
         <div style={{ width: '100%', maxWidth: '600px', backgroundColor: '#fff', borderRadius: '10px', boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)', padding: '2rem' }}>
           <form onSubmit={handleSubmit}>
@@ -127,9 +122,8 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer style={{ textAlign: 'center', padding: '2rem', backgroundColor: '#222', color: '#fff' }}>
-        <p>&copy; 2024 [Nom de l'Agence]. Tous droits réservés.</p>
+        <p>&copy; 2024 [Nom de l&apos;Agence]. Tous droits r&eacute;serv&eacute;s.</p>
       </footer>
     </div>
   );

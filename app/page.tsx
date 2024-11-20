@@ -41,7 +41,7 @@ export default function Home() {
           <div style={{ width: '250px', textAlign: 'center' }}>
             <img src="/images/engagement.png" alt="Engagement" style={{ width: '80px', marginBottom: '1rem' }} />
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#222' }}>Engagement Authentique</h3>
-            <p style={{ fontSize: '1rem', color: '#555' }}>Nos influenceurs sont des leaders d'opinion passionnés, capables de stimuler des conversations authentiques et d'engager des communautés.</p>
+            <p style={{ fontSize: '1rem', color: '#555' }}>Nos influenceurs sont des leaders d&apos;opinion passionnés, capables de stimuler des conversations authentiques et d&apos;engager des communautés.</p>
           </div>
           <div style={{ width: '250px', textAlign: 'center' }}>
             <img src="/images/créativité.png" alt="Créativité" style={{ width: '80px', marginBottom: '1rem' }} />
@@ -51,7 +51,7 @@ export default function Home() {
           <div style={{ width: '250px', textAlign: 'center' }}>
             <img src="/images/résultats.png" alt="Résultats" style={{ width: '80px', marginBottom: '1rem' }} />
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#222' }}>Résultats Concrets</h3>
-            <p style={{ fontSize: '1rem', color: '#555' }}>Chaque campagne menée par nos influenceurs génère des résultats mesurables et tangibles, que ce soit en termes d'engagement ou de conversion.</p>
+            <p style={{ fontSize: '1rem', color: '#555' }}>Chaque campagne menée par nos influenceurs génère des résultats mesurables et tangibles, que ce soit en termes d&apos;engagement ou de conversion.</p>
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function Home() {
       <section style={{ textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#222', color: '#fff' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>Prêt à lancer votre prochaine campagne ?</h2>
         <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#ddd' }}>
-          Contactez-nous dès aujourd'hui pour collaborer avec nos influenceurs et faire grandir votre marque.
+          Contactez-nous dès aujourd&apos;hui pour collaborer avec nos influenceurs et faire grandir votre marque.
         </p>
         <Link href="/contact">
           <button
