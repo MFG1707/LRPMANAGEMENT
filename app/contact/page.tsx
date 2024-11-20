@@ -203,7 +203,7 @@ export default function Contact() {
           color: "#fff",
         }}
       >
-        <p>&copy; 2024 [Nom de l&apos;Agence]. Tous droits r&eacute;serv&eacute;s.</p>
+        <p>&copy; 2024 LE ROND-POINT MANAGEMENT. Tous droits r&eacute;serv&eacute;s.</p>
       </footer>
 
       <style jsx>{`
