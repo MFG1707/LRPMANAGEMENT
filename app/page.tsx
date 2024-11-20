@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0 }}>
       {/* Header Section */}
-      <header style={{ textAlign: 'center', padding: '4rem', backgroundColor: '#222', color: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
+      <header style={{
+        textAlign: 'center', padding: '4rem', backgroundColor: '#222', color: '#fff', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+        margin: 0, width: '100%'
+      }}>
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', color: '#fff' }}>Bienvenue chez LE ROND POINT MANAGEMENT</h1>
         <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', marginBottom: '2rem', color: '#ddd' }}>
           Nous connectons des marques de renom avec des influenceurs talentueux pour créer des campagnes percutantes et mémorables.
@@ -32,12 +35,16 @@ export default function Home() {
       </header>
 
       {/* About Section */}
-      <section style={{ textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#f9f9f9' }}>
+      <section style={{
+        textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#f9f9f9', display: 'flex', flexDirection: 'column', alignItems: 'center'
+      }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#222' }}>Pourquoi Choisir Nos Influenceurs ?</h2>
         <p style={{ fontSize: '1.2rem', maxWidth: '900px', margin: '0 auto', marginBottom: '3rem', color: '#333' }}>
           Nos influenceurs sont soigneusement sélectionnés pour leur capacité à engager et inspirer leurs audiences. Grâce à des histoires authentiques, une créativité débordante et une connexion unique avec leurs communautés, ils transforment chaque campagne en un succès viral.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '2rem' }}>
+        <div style={{
+          display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '2rem', maxWidth: '1200px', margin: '0 auto'
+        }}>
           <div style={{ width: '250px', textAlign: 'center' }}>
             <img src="/images/engagement.png" alt="Engagement" style={{ width: '80px', marginBottom: '1rem' }} />
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#222' }}>Engagement Authentique</h3>
@@ -57,18 +64,22 @@ export default function Home() {
       </section>
 
       {/* Success Stories Section */}
-      <section style={{ textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#fff' }}>
+      <section style={{
+        textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center'
+      }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem', color: '#222' }}>Nos Succès</h2>
         <p style={{ fontSize: '1.2rem', maxWidth: '900px', margin: '0 auto', marginBottom: '3rem', color: '#333' }}>
           Découvrez quelques-unes des campagnes les plus réussies que nous avons menées en collaboration avec nos influenceurs.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem' }}>
-          <div style={{ width: '300px', textAlign: 'center' }}>
+        <div style={{
+          display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap', margin: '0 auto', maxWidth: '1200px'
+        }}>
+          <div style={{ width: '300px', textAlign: 'center', marginBottom: '2rem' }}>
             <img src="/images/campagne1.jpg" alt="Campagne 1" style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)' }} />
             <h3 style={{ fontSize: '1.5rem', marginTop: '1rem', color: '#222' }}>Campagne X</h3>
             <p style={{ fontSize: '1rem', color: '#888' }}>Une collaboration avec des influenceurs du domaine de la mode, atteignant plus de 500K impressions.</p>
           </div>
-          <div style={{ width: '300px', textAlign: 'center' }}>
+          <div style={{ width: '300px', textAlign: 'center', marginBottom: '2rem' }}>
             <img src="/images/campagne2.jpg" alt="Campagne 2" style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)' }} />
             <h3 style={{ fontSize: '1.5rem', marginTop: '1rem', color: '#222' }}>Campagne Y</h3>
             <p style={{ fontSize: '1rem', color: '#888' }}>Une campagne réussie dans le secteur du bien-être, générant un taux de conversion de 15%.</p>
@@ -77,7 +88,9 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section style={{ textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#222', color: '#fff' }}>
+      <section style={{
+        textAlign: 'center', padding: '4rem 2rem', backgroundColor: '#222', color: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center'
+      }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>Prêt à lancer votre prochaine campagne ?</h2>
         <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: '#ddd' }}>
           Contactez-nous dès aujourd&apos;hui pour collaborer avec nos influenceurs et faire grandir votre marque.
@@ -102,11 +115,6 @@ export default function Home() {
           </button>
         </Link>
       </section>
-
-      {/* Footer */}
-      <footer style={{ textAlign: 'center', padding: '2rem', backgroundColor: '#222', color: '#fff' }}>
-        <p>&copy; 2024 LE ROND POINT. Tous droits réservés.</p>
-      </footer>
     </div>
   );
 }

@@ -1,39 +1,92 @@
-/* General Styles */
+/* Influenceurs.module.css */
+
+/* Styles généraux */
 .container {
-  padding: 40px;
-  background-color: #f3f3f3;
-  font-family: 'Arial', sans-serif;
-  color: #333;
+  padding: 20px;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  color: #333;  /* Noire pour le titre */
-  margin-bottom: 10px;
-}
-
-.header p {
-  font-size: 1.2rem;
-  color: #555;  /* Gris foncé pour le texte */
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .sliderContainer {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.card {
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.reputation {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.details {
+  padding: 10px;
+}
+
+.stats {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.atoutsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.atoutItem {
+  font-size: 0.875rem;
+  color: #555;
 }
 
 .scrollButton {
-  background-color: #333;  /* Boutons noirs */
-  color: white;
+  background-color: #EE2677;
+  color: #fff;
   border: none;
   padding: 10px;
   font-size: 1.5rem;
@@ -42,89 +95,91 @@
 }
 
 .scrollButton:hover {
-  background-color: #555;  /* Un gris plus clair au survol */
-}
-
-.slider {
-  display: flex;
-  overflow-x: scroll;
-  gap: 20px;
-  padding: 20px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  justify-content: flex-start;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  width: 280px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  scroll-snap-align: start;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.photos {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.photo {
-  border-radius: 8px;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-
-.photo:hover {
-  transform: scale(1.1);
-}
-
-.name {
-  font-size: 1.5rem;
-  color: #333;  /* Texte noir pour le nom */
-  margin-top: 10px;
-}
-
-.reputation {
-  color: #777;  /* Gris pour la réputation */
-  font-style: italic;
-  margin-top: 5px;
-}
-
-.details {
-  margin-top: 15px;
-}
-
-.stats {
-  font-size: 1rem;
-  color: #555;  /* Gris foncé pour les stats */
-  margin-bottom: 10px;
-}
-
-.atoutsList {
-  list-style: none;
-  padding: 0;
-}
-
-.atoutItem {
-  font-size: 1rem;
-  color: #333;  /* Gris foncé pour les atouts */
+  background-color: #d21866;
 }
 
 .footer {
   text-align: center;
-  margin-top: 40px;
-  font-size: 1rem;
-  color: #777;  /* Gris pour le footer */
+  margin-top: 30px;
+  color: #777;
+  font-size: 0.875rem;
+}
+
+/* Media Queries pour rendre le site responsive */
+@media (max-width: 1200px) {
+  .slider {
+    gap: 10px;
+  }
+
+  .card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .photo {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    gap: 5px;
+  }
+
+  .card {
+    min-width: 180px;
+    max-width: 180px;
+  }
+
+  .photo {
+    max-width: 100px;
+  }
+
+  .name {
+    font-size: 1rem;
+  }
+
+  .reputation {
+    font-size: 0.75rem;
+  }
+
+  .stats {
+    font-size: 0.75rem;
+  }
+
+  .atoutItem {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    gap: 5px;
+  }
+
+  .card {
+    min-width: 160px;
+    max-width: 160px;
+  }
+
+  .photo {
+    max-width: 80px;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .reputation {
+    font-size: 0.75rem;
+  }
+
+  .details {
+    font-size: 0.75rem;
+  }
+
+  .scrollButton {
+    font-size: 1.25rem;
+    padding: 8px;
+  }
 }

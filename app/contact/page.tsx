@@ -205,6 +205,66 @@ export default function Contact() {
       >
         <p>&copy; 2024 [Nom de l&apos;Agence]. Tous droits r&eacute;serv&eacute;s.</p>
       </footer>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          header {
+            padding: 2rem;
+          }
+
+          h1 {
+            font-size: 2rem;
+          }
+
+          section {
+            padding: 2rem 1rem;
+          }
+
+          form {
+            padding: 1rem;
+          }
+
+          label {
+            font-size: 1rem;
+          }
+
+          input,
+          textarea {
+            font-size: 0.9rem;
+            padding: 0.8rem;
+          }
+
+          button {
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          header {
+            padding: 1.5rem;
+          }
+
+          h1 {
+            font-size: 1.5rem;
+          }
+
+          section {
+            padding: 1.5rem 0.5rem;
+          }
+
+          input,
+          textarea {
+            font-size: 0.85rem;
+            padding: 0.6rem;
+          }
+
+          button {
+            font-size: 0.9rem;
+            padding: 0.7rem 1.8rem;
+          }
+        }
+      `}</style>
     </div>
   );
 }
