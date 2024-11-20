@@ -100,17 +100,21 @@ export default function Influenceurs() {
   const sliderRef = useRef(null);
 
   const scrollLeft = () => {
-    sliderRef.current.scrollBy({
-      left: -300,
-      behavior: 'smooth',
-    });
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: -300,
+        behavior: 'smooth',
+      });
+    }
   };
 
   const scrollRight = () => {
-    sliderRef.current.scrollBy({
-      left: 300,
-      behavior: 'smooth',
-    });
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({
+        left: 300,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
