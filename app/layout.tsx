@@ -32,7 +32,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   // Menu items pour le drawer
   const menuItems = [
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
-    { text: 'Influenceurs', path: '/influencers', icon: <PersonIcon /> },
+    { text: 'Influenceurs', path: '/influenceurs', icon: <PersonIcon /> },
     { text: 'Contact', path: '/contact', icon: <ContactMailIcon /> },
   ];
 
