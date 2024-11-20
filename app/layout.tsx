@@ -1,35 +1,41 @@
 "use client";
 
 import * as React from 'react';
-import { AppBar, Toolbar, Button, Typography, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import {
+  Drawer,
+  AppBar,
+  Toolbar,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  IconButton,
+} from '@mui/material';
 import { useRouter } from 'next/navigation';
-
-// Importer les icônes
+import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
-import MenuIcon from '@mui/icons-material/Menu';
 
-// Largeur du drawer (menu latéral)
 const drawerWidth = 240;
 
-// Composant Layout avec typage explicite pour 'children'
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
-  // Fonction pour afficher/masquer le drawer
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  // Fonction de navigation et de fermeture du drawer
   const handleNavigation = (path: string) => {
     router.push(path);
-    setOpen(false); // Ferme le menu après la navigation
+    toggleDrawer();
   };
 
-  // Menu items pour le drawer
   const menuItems = [
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
     { text: 'Influenceurs', path: '/influencers', icon: <PersonIcon /> },
@@ -39,85 +45,46 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fr">
       <body>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#fff' }}>
-          {/* AppBar avec les éléments du menu */}
+        <div style={{ display: 'flex' }}>
+          {/* AppBar avec la palette de couleurs inversée */}
           <AppBar
             position="fixed"
-            style={{
-              zIndex: 1201,
-              backgroundColor: 'black',
-              color: 'white',
-              boxShadow: 'none',
-            }}
+            style={{ zIndex: 1201, backgroundColor: '#EE2677', color: '#FFFFFF', paddingLeft: open ? drawerWidth : 0 }}
           >
-            <Toolbar style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-              <Button onClick={toggleDrawer} color="inherit">
-                <MenuIcon />
-              </Button>
-              <Typography variant="h6" noWrap style={{ flexGrow: 1, textAlign: 'center' }}>
-                LE ROND POINT MANAGEMENT
+            <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <IconButton onClick={toggleDrawer} color="inherit" style={{ transition: 'transform 0.2s' }}>
+                <MenuIcon style={{ fontSize: '30px', transition: 'transform 0.2s', color: '#FFFFFF' }} />
+              </IconButton>
+              <Typography variant="h6" noWrap style={{ flexGrow: 1, textAlign: 'center', color: '#FFFFFF', fontFamily: `'Dancing Script', cursive` }}>
+                Bines-Bines
               </Typography>
-              <div style={{ width: '64px' }} />
             </Toolbar>
           </AppBar>
 
-          {/* Drawer avec les éléments du menu alignés horizontalement */}
+          {/* Drawer */}
           <Drawer
             variant="temporary"
             open={open}
             onClose={toggleDrawer}
-            style={{
-              width: drawerWidth,
-              flexShrink: 0,
-              zIndex: 1200,
-            }}
-            ModalProps={{
-              keepMounted: true,
-            }}
-            sx={{
-              '& .MuiDrawer-paper': {
-                width: '100%',
-                backgroundColor: 'black',
-                display: 'flex',
-                flexDirection: 'row', // Disposition horizontale
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '10px 0',
-                marginTop: '64px',
-              },
-            }}
+            PaperProps={{ style: { width: drawerWidth, marginTop: '64px', backgroundColor: '#EE2677', color: '#FFFFFF' } }}
           >
-            <List style={{ display: 'flex' }}>
+            <List>
               {menuItems.map((item, index) => (
                 <ListItem
-                  button
+                  component="div"
                   key={index}
                   onClick={() => handleNavigation(item.path)}
-                  sx={{
-                    textAlign: 'center',
-                    margin: '0 12px',
-                    padding: '12px 24px',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    backgroundColor: '#ADD8E6',
-                    color: 'white',
-                    '&:hover': {
-                      backgroundColor: '#00008B',
-                      transform: 'scale(1.03)',
-                      transition: 'transform 0.2s ease-in-out',
-                    },
-                  }}
+                  style={{ cursor: 'pointer', color: '#FFFFFF' }} // Couleur du texte des éléments du menu
                 >
-                  <div style={{ marginRight: '8px' }}>{item.icon}</div>
-                  <ListItemText primary={item.text} sx={{ fontSize: '16px', fontWeight: '500' }} />
+                  {item.icon}
+                  <ListItemText primary={item.text} primaryTypographyProps={{ style: { color: '#FFFFFF', fontFamily: `'Open Sans', sans-serif` } }} />
                 </ListItem>
               ))}
             </List>
           </Drawer>
 
-          {/* Section principale du contenu */}
-          <main style={{ flexGrow: 1, padding: '20px', marginTop: '80px', backgroundColor: '#f5f5f5', borderRadius: '12px' }}>
+          {/* Contenu principal */}
+          <main style={{ flexGrow: 1, padding: '20px', marginTop: '64px', paddingLeft: open ? drawerWidth : 0, backgroundColor: '#F3D3CD' }}>
             {children}
           </main>
         </div>
