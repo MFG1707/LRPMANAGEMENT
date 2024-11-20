@@ -45,7 +45,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             position="fixed"
             style={{
               zIndex: 1201,
-              backgroundColor: 'black',
+              backgroundColor: '#00008B',
               color: 'white',
               boxShadow: 'none',
             }}
@@ -61,7 +61,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Toolbar>
           </AppBar>
 
-          {/* Drawer avec les éléments du menu alignés horizontalement */}
+          {/* Drawer avec les éléments du menu alignés verticalement */}
           <Drawer
             variant="temporary"
             open={open}
@@ -76,18 +76,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             }}
             sx={{
               '& .MuiDrawer-paper': {
-                width: '100%',
-                backgroundColor: 'black',
+                width: drawerWidth,
+                backgroundColor: '#00008B',
                 display: 'flex',
-                flexDirection: 'row', // Disposition horizontale
-                justifyContent: 'center',
-                alignItems: 'center',
-                padding: '10px 0',
-                marginTop: '64px',
+                flexDirection: 'column', // Disposition verticale
+                justifyContent: 'flex-start',
+                alignItems: 'flex-start',
+                paddingTop: '80px', // Espacement avec l'AppBar
               },
             }}
           >
-            <List style={{ display: 'flex' }}>
+            <List style={{ width: '100%' }}>
               {menuItems.map((item, index) => (
                 <ListItem
                   component="div"
@@ -98,12 +97,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
-                    margin: '0 12px',
+                    margin: '10px 0',
                     padding: '12px 24px',
                     borderRadius: '8px',
+                    width: '100%',
                     '&:hover': {
-                      backgroundColor: '#00008B',
-                      transform: 'scale(1.03)',
+                      backgroundColor: '#EE2677',
+                      transform: 'scale(1.05)',
                       transition: 'transform 0.2s ease-in-out',
                     },
                   }}
