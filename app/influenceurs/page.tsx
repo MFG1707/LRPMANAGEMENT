@@ -97,7 +97,8 @@ export default function Influenceurs() {
     },
   ];
 
-  const sliderRef = useRef(null);
+  // Explicitly type the reference to an HTMLElement that supports scrollBy
+  const sliderRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
     if (sliderRef.current) {
