@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <style jsx>{`
         @media (max-width: 768px) {
           header {
@@ -60,23 +60,9 @@ export default function Home() {
         backgroundColor: '#222',
         color: '#fff',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flex: 1,
-        width: '100%',
       }}>
-        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', color: '#fff' }}>
-          Bienvenue chez LE ROND POINT MANAGEMENT
-        </h1>
-        <p style={{
-          fontSize: '1.2rem',
-          maxWidth: '800px',
-          margin: '0 auto',
-          marginBottom: '2rem',
-          color: '#ddd'
-        }}>
+        <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem' }}>Bienvenue chez LE ROND POINT MANAGEMENT</h1>
+        <p style={{ fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto', marginBottom: '2rem' }}>
           Nous connectons des marques de renom avec des influenceurs talentueux pour créer des campagnes percutantes et mémorables.
         </p>
         <Link href="/influenceurs">
@@ -105,12 +91,7 @@ export default function Home() {
         textAlign: 'center',
         padding: '4rem 2rem',
         backgroundColor: '#f9f9f9',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         flex: 1,
-        width: '100%',
       }}>
         <h2 style={{
           fontSize: '2.5rem',
@@ -143,12 +124,23 @@ export default function Home() {
             <p style={{ fontSize: '1rem', color: '#555' }}>Nos influenceurs stimulent des conversations authentiques.</p>
           </div>
           <div style={{ width: '250px', textAlign: 'center' }}>
-            <img src="/images/créativité.png" alt="Créativité" style={{ width: '80px', marginBottom: '1rem' }} />
+            <img src="/images/creativite.png" alt="Créativité" style={{ width: '80px', marginBottom: '1rem' }} />
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#222' }}>Créativité Sans Limites</h3>
             <p style={{ fontSize: '1rem', color: '#555' }}>Collaboration sur mesure, créativité sans frontières.</p>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer style={{
+        textAlign: 'center',
+        padding: '2rem',
+        backgroundColor: '#222',
+        color: '#fff',
+        marginTop: 'auto',
+      }}>
+        <p>&copy; 2024 LE ROND POINT MANAGEMENT - Tous droits réservés.</p>
+      </footer>
     </div>
   );
 }

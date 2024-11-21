@@ -1,41 +1,120 @@
+/* Influenceurs.module.css */
+
 .container {
-  padding: 20px;
+  padding: 2rem;
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 .header h1 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 2.5rem;
+  color: #222;
 }
 
 .header p {
-  font-size: 1rem;
-  color: #666;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .sliderContainer {
-  display: flex;
-  align-items: center;
   position: relative;
-  overflow: hidden;
-}
-
-.scrollButton {
-  background-color: #ee2677;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  flex-shrink: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .photos {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.reputation {
+  font-size: 1rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.details {
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.atoutsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.atoutItem {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.scrollButton {
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -43,7 +122,7 @@
 }
 
 .scrollButton:hover {
-  background-color: #e62e5d;
+  background: #444;
 }
 
 .scrollButton:first-of-type {
@@ -54,131 +133,58 @@
   right: 10px;
 }
 
-.slider {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
-}
-
-.card {
-  flex: 0 0 300px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.card:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.photos {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.photo {
-  max-width: 100px;
-  max-height: 100px;
-  border-radius: 10px;
-  margin-right: 5px;
-}
-
-.name {
-  font-size: 1.2rem;
-  color: #ee2677;
-}
-
-.reputation {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.details {
-  font-size: 0.85rem;
-  color: #333;
-}
-
-.stats {
-  margin-bottom: 10px;
-  font-size: 0.9rem;
-}
-
-.atoutsList {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 0 10px;
-}
-
-.atoutItem {
-  text-align: left;
-}
-
 .footer {
+  margin-top: 2rem;
   text-align: center;
-  margin-top: 20px;
   font-size: 0.9rem;
-  color: #666;
+  color: #888;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .sliderContainer {
-    flex-direction: column;
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
   }
 
   .card {
-    flex: 0 0 80%;
-    margin: 0 auto;
+    width: 250px;
   }
 
   .photo {
-    max-width: 80px;
-    max-height: 80px;
+    width: 80px;
+    height: 80px;
   }
+}
 
-  .scrollButton {
-    display: none; /* Hide navigation buttons on small screens */
-  }
-
+@media (max-width: 480px) {
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .header p {
     font-size: 0.9rem;
   }
-}
 
-@media (max-width: 480px) {
   .card {
-    padding: 10px;
-    flex: 0 0 100%;
+    width: 200px;
   }
 
-  .header h1 {
+  .photo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .scrollButton {
+    width: 40px;
+    height: 40px;
     font-size: 1.2rem;
-  }
-
-  .header p {
-    font-size: 0.8rem;
-  }
-
-  .name {
-    font-size: 1rem;
-  }
-
-  .details {
-    font-size: 0.75rem;
   }
 }

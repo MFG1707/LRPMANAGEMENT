@@ -120,62 +120,52 @@ export default function Influenceurs() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h1>Nos Influenceurs</h1>
-        <p>
-          Découvrez nos influenceurs talentueux qui transforment vos campagnes en
-          succès. Faites confiance à leur créativité et leur impact pour atteindre
-          vos objectifs.
-        </p>
-      </header>
+  <header className={styles.header}>
+    <h1>Nos Influenceurs</h1>
+    <p>
+      Découvrez nos influenceurs talentueux qui transforment vos campagnes en
+      succès.
+    </p>
+  </header>
 
-      <div className={styles.sliderContainer}>
-        <button className={styles.scrollButton} onClick={scrollLeft}>
-          <FaChevronLeft />
-        </button>
-        <div className={styles.slider} ref={sliderRef}>
-          {influenceurs.map((influenceur) => (
-            <div key={influenceur.id} className={styles.card}>
-              <div className={styles.photos}>
-                {influenceur.photos.map((photo, index) => (
-                  <img
-                    key={index}
-                    src={photo}
-                    alt={`${influenceur.name}`}
-                    className={styles.photo}
-                  />
-                ))}
-              </div>
-              <h3 className={styles.name}>{influenceur.name}</h3>
-              <p className={styles.reputation}>{influenceur.reputation}</p>
-              <div className={styles.details}>
-                <div className={styles.stats}>
-                  <span>👥 {influenceur.stats.abonnés}</span>
-                  <span>📱 {influenceur.stats.plateformes.join(', ')}</span>
-                </div>
-                <h4>Atouts :</h4>
-                <ul className={styles.atoutsList}>
-                  {influenceur.atouts.map((atout, index) => (
-                    <li key={index} className={styles.atoutItem}>
-                      ⭐ {atout}
-                    </li>
-                  ))}
-                </ul>
-                <p>
-                  <strong>Force :</strong> {influenceur.force}
-                </p>
-              </div>
+  <div className={styles.sliderContainer}>
+    <button className={styles.scrollButton} onClick={scrollLeft}>
+      <FaChevronLeft />
+    </button>
+    <div className={styles.slider} ref={sliderRef}>
+      {influenceurs.map((influenceur) => (
+        <div key={influenceur.id} className={styles.card}>
+          <div className={styles.photos}>
+            {influenceur.photos.map((photo, index) => (
+              <img key={index} src={photo} alt={influenceur.name} className={styles.photo} />
+            ))}
+          </div>
+          <h3 className={styles.name}>{influenceur.name}</h3>
+          <p className={styles.reputation}>{influenceur.reputation}</p>
+          <div className={styles.details}>
+            <div className={styles.stats}>
+              <span>👥 {influenceur.stats.abonnés}</span>
+              <span>📱 {influenceur.stats.plateformes.join(', ')}</span>
             </div>
-          ))}
+            <h4>Atouts :</h4>
+            <ul className={styles.atoutsList}>
+              {influenceur.atouts.map((atout, index) => (
+                <li key={index} className={styles.atoutItem}>⭐ {atout}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <button className={styles.scrollButton} onClick={scrollRight}>
-          <FaChevronRight />
-        </button>
-      </div>
-
-      <footer className={styles.footer}>
-        <p>&copy; 2024 LE ROND POINT MANAGEMENT - Tous droits réservés.</p>
-      </footer>
+      ))}
     </div>
+    <button className={styles.scrollButton} onClick={scrollRight}>
+      <FaChevronRight />
+    </button>
+  </div>
+
+  <footer className={styles.footer}>
+    <p>&copy; 2024 LE ROND POINT MANAGEMENT - Tous droits réservés.</p>
+  </footer>
+</div>
+
   );
 }
