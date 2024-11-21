@@ -3,33 +3,27 @@
 import * as React from 'react';
 import { AppBar, Toolbar, Button, Typography, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { useRouter } from 'next/navigation';
-
-// Importer les icônes
+import WhatsAppIcon from '@mui/icons-material/WhatsApp'; // Importer l'icône WhatsApp
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import MenuIcon from '@mui/icons-material/Menu';
 
-// Largeur du drawer (menu latéral)
 const drawerWidth = 240;
 
-// Composant Layout avec typage explicite pour 'children'
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
 
-  // Fonction pour afficher/masquer le drawer
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
-  // Fonction de navigation et de fermeture du drawer
   const handleNavigation = (path: string) => {
     router.push(path);
-    setOpen(false); // Ferme le menu après la navigation
+    setOpen(false);
   };
 
-  // Menu items pour le drawer
   const menuItems = [
     { text: 'Accueil', path: '/', icon: <HomeIcon /> },
     { text: 'Influenceurs', path: '/influenceurs', icon: <PersonIcon /> },
@@ -40,13 +34,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <html lang="fr">
       <body>
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#f5f5f5' }}>
-          {/* AppBar avec les éléments du menu */}
           <AppBar
             position="fixed"
             style={{
               zIndex: 1201,
-              backgroundColor: '#000', // Fond noir pour l'AppBar
-              color: '#fff', // Texte blanc
+              backgroundColor: '#000',
+              color: '#fff',
               boxShadow: 'none',
             }}
           >
@@ -61,7 +54,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </Toolbar>
           </AppBar>
 
-          {/* Drawer avec les éléments du menu alignés verticalement */}
           <Drawer
             variant="temporary"
             open={open}
@@ -77,12 +69,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             sx={{
               '& .MuiDrawer-paper': {
                 width: drawerWidth,
-                backgroundColor: '#333', // Fond gris foncé pour le menu
+                backgroundColor: '#333',
                 display: 'flex',
-                flexDirection: 'column', // Disposition verticale
+                flexDirection: 'column',
                 justifyContent: 'flex-start',
                 alignItems: 'flex-start',
-                paddingTop: '80px', // Espacement avec l'AppBar
+                paddingTop: '80px',
               },
             }}
           >
@@ -102,7 +94,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     borderRadius: '8px',
                     width: '100%',
                     '&:hover': {
-                      backgroundColor: '#444', // Gris plus clair au survol
+                      backgroundColor: '#444',
                       transform: 'scale(1.05)',
                       transition: 'transform 0.2s ease-in-out',
                     },
@@ -125,10 +117,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </List>
           </Drawer>
 
-          {/* Section principale du contenu */}
           <main style={{ flexGrow: 1, padding: '20px', marginTop: '80px', backgroundColor: '#f5f5f5', borderRadius: '12px' }}>
             {children}
           </main>
+
+          {/* Bouton flottant WhatsApp */}
+          <Button
+            href="https://wa.me/22941120412"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              position: 'fixed',
+              bottom: '20px',
+              right: '20px',
+              backgroundColor: '#25D366', // Couleur officielle WhatsApp
+              color: '#fff',
+              borderRadius: '50%',
+              width: '60px',
+              height: '60px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <WhatsAppIcon style={{ fontSize: '30px' }} />
+          </Button>
         </div>
       </body>
     </html>
