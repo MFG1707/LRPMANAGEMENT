@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0 }}>
+    <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <style jsx>{`
         @media (max-width: 768px) {
           header {
@@ -60,8 +60,12 @@ export default function Home() {
         backgroundColor: '#222',
         color: '#fff',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        margin: 0,
-        width: '100%'
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        width: '100%',
       }}>
         <h1 style={{ fontSize: '3rem', fontWeight: 'bold', marginBottom: '1rem', color: '#fff' }}>
           Bienvenue chez LE ROND POINT MANAGEMENT
@@ -103,7 +107,10 @@ export default function Home() {
         backgroundColor: '#f9f9f9',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+        width: '100%',
       }}>
         <h2 style={{
           fontSize: '2.5rem',
@@ -124,7 +131,7 @@ export default function Home() {
         </p>
         <div style={{
           display: 'flex',
-          justifyContent: 'space-around',
+          justifyContent: 'center',
           flexWrap: 'wrap',
           gap: '2rem',
           maxWidth: '1200px',
@@ -142,9 +149,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Other Sections */}
-      {/* Ajoutez ici les autres sections */}
     </div>
   );
 }
